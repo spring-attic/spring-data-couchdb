@@ -1,0 +1,5 @@
+rootProject.name = 'spring-data-redis'
+
+include 'docs'
+       
+docs = findProject(':docs')

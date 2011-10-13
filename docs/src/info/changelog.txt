@@ -1,0 +1,124 @@
+SPRING DATA REDIS INTEGRATION CHANGELOG
+=======================================
+http://www.springsource.org/spring-data
+
+
+Changes in version 1.0.0.RC1 (2011-mm-dd)
+----------------------------------------
+
+
+Changes in version 1.0.0.M4 (2011-07-18)
+----------------------------------------
+
+General
+* Split Spring Data Key Value project into separate projects for Redis and Riak
+* Changed build system to Gradle
+* Changed root package from org.springframework.data.keyvalue.redis to org.springframework.data.redis
+* Introduced Redis implementation for Spring 3.1 cache abstraction
+* Upgraded to Spring Framework 3.1 M2
+* Upgraded to Jedis 2.0.0
+
+Package o.s.d.redis.connection
+* Added awarness of the selected Redis DB
+
+Package o.s.d.redis.core
+* Added missing zRange* operations
+* Fixed incorrect cast in RedisTemplate#keys()
+* Removed ConnectionFactory constructor
+
+Package o.s.d.redis.listener
+* Simplified namespace declaration for Redis pubsub
+
+Package o.s.d.redis.support
+* Improved compatibility of atomic counters with M2 release
+* Added Properties implementation on top of Redis
+
+
+Changes in version 1.0.0.M3 (2011-04-06)
+----------------------------------------
+
+Redis
+-----
+
+General
+* Added support for RJC (new Redis client)
+* Added dedicated SORT and SORT/GET support
+* Introduced HashMapper feature for mapping objects to and from maps
+* Improved exception hierarchy to be more consistent with Spring DAO
+* Made several Redis dependencies optional to eliminate unnecessary jars from the classpath
+
+Package o.s.d.k.redis.connection
+* Added support for indexes to RedisConnectionFactories
+* Added new key operations to KeyOperations (formerly KeyBound)
+* Improved handling of Jedis exceptions
+
+Package o.s.d.k.redis.core
+* Serializers are exposed to RedisCallback
+* Added missing operations (move, select) to RedisTemplate
+* Fixed the signature of various method
+
+Package o.s.d.k.redis.support.atomic
+* Fixed incorrect serialization leading to error for RedisAtomicInteger & RedisAtomicLong
+
+
+Changes in version 1.0.0.M2 (2011-02-10)
+----------------------------------------
+
+Redis
+-----
+
+General
+* Added PubSub support (message listener container and namespace)
+* Added JSON and Object/XML Mapping serializers
+* Completed support for Redis (2.2) commands
+* Improved documentation
+* Upgraded to Redis 2.2
+* Updraded to Jedis 1.5.2
+
+Package o.s.d.k.redis.connection
+* Added sort support
+* Added pipelining support
+* Added StringRedisConnection for String-focused operations
+* Renamed JedisConnectionFactory pooling to usePool
+* Renamed JredisConnectionFactory pooling to usePool
+
+Package o.s.d.k.redis.connection.jedis
+* Added support for Jedis rich exceptions
+* Added support for broken pooled connection
+
+Package o.s.d.k.redis.core
+* Fix serializationg bug for hash value inside RedisTemplate
+* Added injection for Redis operations ("views")
+
+Package o.s.d.k.redis.support
+* Refined AtomicInteger and AtomicLong constructors to use the backing store value as initial counter
+
+
+Riak
+----
+
+General
+* Important bug fixes
+* Fully asynchronous AsyncRiakTemplate object
+* Groovy DSL for Riak access using async template underneath
+
+
+Changes in version Riak 1.0.0.M1 (2010-12-15)
+---------------------------------------------
+General
+* Generified RiakTemplate for exception translation, serialization, and data access
+* Built-in HTTP REST client based on Spring 3.0 RestTemplate
+* java.io and Spring IO resource abstractions for reading/writing streams
+* java.io.File subclass that represents a Riak resource
+
+
+Changes in version Redis 1.0.0.M1 (2010-12-13)
+----------------------------------------------
+General
+* Configuration support for Redis Jedis and JRedis drivers/connectors
+* Connection package as low-level abstraction across multiple drivers
+* Exception translation
+* Generified RedisTemplate for exception translation and serialization support
+* Various serialization strategies
+* Atomic counter support classes
+* JDK Collection implementations on top of Redis
