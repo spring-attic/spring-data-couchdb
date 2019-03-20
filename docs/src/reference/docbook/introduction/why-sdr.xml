@@ -7,7 +7,7 @@
     non-invasive programming model enabled by the use of dependency
     injection, AOP, and portable service abstractions.</para>
     
-    <para><ulink url="http://en.wikipedia.org/wiki/NoSQL">NoSQL</ulink>
+    <para><ulink url="https://en.wikipedia.org/wiki/NoSQL">NoSQL</ulink>
     storages provide an alternative to classical RDBMS for horizontal scalability
     and speed. In terms of implementation, Key Value stores represent one of the
     largest (and oldest) member in the NoSQL space.</para>
