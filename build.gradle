@@ -15,13 +15,13 @@ buildscript {
     
         add(new org.apache.ivy.plugins.resolver.URLResolver()) {
             name = "GitHub"
-            addIvyPattern 'http://cloud.github.com/downloads/costin/gradle-stuff/[organization].[module]-[artifact]-[revision].[ext]'
-            addArtifactPattern 'http://cloud.github.com/downloads/costin/gradle-stuff/[organization].[module]-[revision].[ext]'
+            addIvyPattern 'https://cloud.github.com/downloads/costin/gradle-stuff/[organization].[module]-[artifact]-[revision].[ext]'
+            addArtifactPattern 'https://cloud.github.com/downloads/costin/gradle-stuff/[organization].[module]-[revision].[ext]'
         }
         mavenCentral()
         mavenLocal()
-        mavenRepo name: "springsource-org-release", urls: "http://repository.springsource.com/maven/bundles/release"
-        mavenRepo name: "springsource-org-external", urls: "http://repository.springsource.com/maven/bundles/external"
+        mavenRepo name: "springsource-org-release", urls: "https://repository.springsource.com/maven/bundles/release"
+        mavenRepo name: "springsource-org-external", urls: "https://repository.springsource.com/maven/bundles/external"
     }
 
     dependencies {
@@ -42,14 +42,14 @@ allprojects {
         mavenLocal()
         mavenCentral()
         // Public Spring artefacts
-        mavenRepo name: "springsource-org-release", urls: "http://repository.springsource.com/maven/bundles/release"
-        mavenRepo name: "spring-release", urls: "http://maven.springframework.org/release"
-        mavenRepo name: "spring-milestone", urls: "http://maven.springframework.org/milestone"
-        mavenRepo name: "spring-snapshot", urls: "http://maven.springframework.org/snapshot"
-        mavenRepo name: "sonatype-snapshot", urls: "http://oss.sonatype.org/content/repositories/snapshots"
-        mavenRepo name: "jboss", urls: "http://repository.jboss.org/maven2/"
-        mavenRepo name: "java.net", urls: "http://download.java.net/maven/2/"
-        mavenRepo name: "ext-snapshots", urls: "http://springframework.svn.sourceforge.net/svnroot/springframework/repos/repo-ext/"
+        mavenRepo name: "springsource-org-release", urls: "https://repository.springsource.com/maven/bundles/release"
+        mavenRepo name: "spring-release", urls: "https://maven.springframework.org/release"
+        mavenRepo name: "spring-milestone", urls: "https://maven.springframework.org/milestone"
+        mavenRepo name: "spring-snapshot", urls: "https://maven.springframework.org/snapshot"
+        mavenRepo name: "sonatype-snapshot", urls: "https://oss.sonatype.org/content/repositories/snapshots"
+        mavenRepo name: "jboss", urls: "https://repository.jboss.org/maven2/"
+        mavenRepo name: "java.net", urls: "https://download.java.net/maven/2/"
+        mavenRepo name: "ext-snapshots", urls: "https://springframework.svn.sourceforge.net/svnroot/springframework/repos/repo-ext/"
 	}
 
 }
@@ -117,9 +117,9 @@ javadoc {
       ]
   
      links = [
-        "http://static.springframework.org/spring/docs/3.0.x/javadoc-api",
-        "http://download.oracle.com/javase/6/docs/api",
-        "http://jackson.codehaus.org/1.8.2/javadoc"
+        "https://docs.spring.io/spring/docs/3.0.x/javadoc-api",
+        "https://download.oracle.com/javase/6/docs/api",
+        "https://jackson.codehaus.org/1.8.2/javadoc"
      ]
      
      exclude "org/springframework/data/document/couchdb/config/**"
