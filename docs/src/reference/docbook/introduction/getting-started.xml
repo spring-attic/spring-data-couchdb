@@ -17,21 +17,21 @@
 		  
 		<section id="get-started:first-steps:spring">
 			<title>Knowing Spring</title>
-			<para>Spring Data uses heavily Spring framework's <ulink url="http://static.springframework.org/spring/docs/3.0.x/reference/spring-core.html">core</ulink> functionality, 
-			such as the <ulink url="http://static.springframework.org/spring/docs/3.0.x/reference/beans.html">IoC</ulink> container,
-			<ulink url="http://static.springframework.org/spring/docs/3.0.x/reference/resources.html">resource</ulink> abstract or
-			<ulink url="http://static.springframework.org/spring/docs/3.0.x/reference/aop.html">AOP</ulink> infrastructure. While it is not important
+			<para>Spring Data uses heavily Spring framework's <ulink url="https://docs.spring.io/spring/docs/3.0.x/reference/spring-core.html">core</ulink> functionality, 
+			such as the <ulink url="https://docs.spring.io/spring/docs/3.0.x/reference/beans.html">IoC</ulink> container,
+			<ulink url="https://docs.spring.io/spring/docs/3.0.x/reference/resources.html">resource</ulink> abstract or
+			<ulink url="https://docs.spring.io/spring/docs/3.0.x/reference/aop.html">AOP</ulink> infrastructure. While it is not important
 			to know the Spring APIs, understanding the concepts behind them is. At a minimum, the idea behind IoC should be familiar.
 			These being said, the more knowledge one has about the Spring, the faster she will pick Spring Data Key Value.
 			Besides the very comprehensive (and sometimes disarming) documentation that explains in detail the Spring Framework,
 			there are a lot of articles, blog entries and books on the matter - take a look at the Spring framework
-			<ulink url="http://www.springsource.org/documentation">home page</ulink> for more information. In general, this should be the starting point for 
+			<ulink url="https://www.springsource.org/documentation">home page</ulink> for more information. In general, this should be the starting point for 
 			developers wanting to try Spring DKV.</para>
 		</section>
 		<section id="get-started:first-steps:nosql">
 			<title>Knowing NoSQL and Key Value stores</title>
 			<para>NoSQL stores have taken the storage world by storm. It is a vast domain with a plethora of solutions, terms and patterns (to make things worth even the
-			term itself has multiple <ulink url="http://www.google.com/search?q=nosoql+acronym">meanings</ulink>).
+			term itself has multiple <ulink url="https://www.google.com/search?q=nosoql+acronym">meanings</ulink>).
 			While some of the principles are common, it is crucial that the user is familiar to some degree with the stores supported by SDKV.
 			The best way to get acquainted to this solutions is to read their documentation and follow their examples - it usually doesn't take more then 5-10 minutes
 			to go through them and if you are coming from an RDMBS-only background many times these exercises can be an eye opener. 
@@ -40,11 +40,11 @@
 		<section id="get-started:first-steps:samples">
 			<title>Trying Out The Samples</title>
 			<para>One can find various samples for key value stores in the dedicated example repo, at 
-			<ulink url="https://github.com/SpringSource/spring-data-keyvalue-examples">http://github.com/SpringSource/spring-data-keyvalue-examples</ulink>. For Spring Redis,
+			<ulink url="https://github.com/SpringSource/spring-data-keyvalue-examples">https://github.com/SpringSource/spring-data-keyvalue-examples</ulink>. For Spring Redis,
 			of interest is the <literal>retwisj</literal> sample, a Twitter-clone built on top of Redis which can be run locally or be deployed into the cloud. See its 
-			<ulink url="http://static.springsource.org/spring-data/data-keyvalue/examples/retwisj/current/">documentation</ulink>, the following blog 
-			<ulink url="http://blog.springsource.com/2011/04/27/getting-started-redis-spring-cloud-foundry/">entry</ulink> or the 
-			<ulink url="http://retwisj.cloudfoundry.com/">live instance</ulink> for more information.</para>
+			<ulink url="https://docs.spring.io/spring-data/data-keyvalue/examples/retwisj/current/">documentation</ulink>, the following blog 
+			<ulink url="https://spring.io/blog/2011/04/27/getting-started-redis-spring-cloud-foundry/">entry</ulink> or the 
+			<ulink url="https://retwisj.cloudfoundry.com/">live instance</ulink> for more information.</para>
 		</section>
 	</section>
     
@@ -55,13 +55,13 @@
 		
 		<section id="get-started:help:community">
   		    <title>Community Support</title>
-			<para>The Spring Data <ulink url="http://forum.springframework.org/forumdisplay.php?f=80">forum</ulink> is a message board for all Spring Data (not just Key Value) users to
+			<para>The Spring Data <ulink url="https://forum.springframework.org/forumdisplay.php?f=80">forum</ulink> is a message board for all Spring Data (not just Key Value) users to
 			share information and help each other. Note that registration is needed <emphasis>only</emphasis> for posting.
 			</para>
 		</section>
 		<section id="get-started:help:professional">
   		    <title>Professional Support</title>
-			<para>Professional, from-the-source support, with guaranteed response time, is available from <ulink url="http://www.springsource.com">SpringSource</ulink>,
+			<para>Professional, from-the-source support, with guaranteed response time, is available from <ulink url="https://www.springsource.com">SpringSource</ulink>,
 			the company behind Spring Data and Spring.  
 			</para>
 		</section>
@@ -71,16 +71,16 @@
 		<title>Following Development</title>
 		
 		<para>For information on the Spring Data source code repository, nightly builds and snapshot artifacts please see the Spring Data home 
-		<ulink url="http://www.springsource.org/spring-data">page</ulink>.   
+		<ulink url="https://www.springsource.org/spring-data">page</ulink>.   
 		</para>
 		<para>You can help make Spring Data best serve the needs of the Spring community by interacting with developers through the Spring Community 
-		<ulink url="http://forum.springsource.org">forums</ulink>.</para>
+		<ulink url="https://forum.spring.io/">forums</ulink>.</para>
 		<para>If you encounter a bug or want to suggest an improvement, 
 		please create a ticket on the Spring Data issue <ulink url="https://jira.springframework.org/browse/DATAKV">tracker</ulink>.</para>
 		<para>To stay up to date with the latest news and announcements in the Spring eco system, subscribe to the 
-		Spring Community <ulink url="http://www.springframework.org/">Portal</ulink>.</para>
-		<para>Lastly, you can follow the SpringSource Data <ulink url="http://blog.springsource.com/category/data-access/">blog</ulink> or the project team on Twitter 
-		(<ulink url="http://twitter.com/costinl">Costin</ulink>)</para>
+		Spring Community <ulink url="https://www.springframework.org/">Portal</ulink>.</para>
+		<para>Lastly, you can follow the SpringSource Data <ulink url="https://spring.io/blog/category/data-access/">blog</ulink> or the project team on Twitter 
+		(<ulink url="https://twitter.com/costinl">Costin</ulink>)</para>
 	</section>
     
 </chapter>

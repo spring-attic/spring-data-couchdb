@@ -149,8 +149,8 @@ template.convertAndSend("hello!", "world");]]></programlisting>
 &lt;beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     <lineannotation>xmlns:redis="http://www.springframework.org/schema/redis"</lineannotation>
-    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        <lineannotation>http://www.springframework.org/schema/redis http://www.springframework.org/schema/redis/spring-redis.xsd"</lineannotation>&gt;
+    xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        <lineannotation>http://www.springframework.org/schema/redis https://www.springframework.org/schema/redis/spring-redis.xsd"</lineannotation>&gt;
 
   &lt;!-- the default ConnectionFactory --&gt;
   &lt;redis:listener-container&gt;

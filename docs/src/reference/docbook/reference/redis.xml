@@ -2,7 +2,7 @@
 <chapter xmlns="http://docbook.org/ns/docbook" version="5.0"  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="redis">
   <title>Redis support</title>
 
-  <para>One of the key value stores supported by Spring Data is <ulink url="http://redis.io">Redis</ulink>.
+  <para>One of the key value stores supported by Spring Data is <ulink url="https://redis.io">Redis</ulink>.
   To quote the project home page:
   <quote>
   Redis is an advanced key-value store. It is similar to memcached but the dataset is not volatile, and values can be strings,
@@ -17,8 +17,8 @@
   <section id="redis:requirements">
     <title>Redis Requirements</title>
     <para>Spring Redis requires Redis 2.0 or above (Redis 2.2 is recommended) and Java SE 6.0 or above.
-    In terms of language bindings (or connectors), Spring Redis integrates with <ulink url="http://github.com/xetorthio/jedis">Jedis</ulink>,  
-    <ulink url="http://github.com/alphazero/jredis">JRedis</ulink> and <ulink url="http://github.com/e-mzungu/rjc">RJC</ulink>, three popular open source Java libraries for Redis. 
+    In terms of language bindings (or connectors), Spring Redis integrates with <ulink url="https://github.com/xetorthio/jedis">Jedis</ulink>,  
+    <ulink url="https://github.com/alphazero/jredis">JRedis</ulink> and <ulink url="https://github.com/e-mzungu/rjc">RJC</ulink>, three popular open source Java libraries for Redis. 
     If you are aware of any other connector that we should be integrating is, please send us feedback.
     </para>
   </section>
@@ -34,7 +34,7 @@
       <xref linkend="redis:template"/> explains the abstraction builds on top of the low-level <interfacename>Connection</interfacename> API to handle the 
       infrastructural concerns and object conversion.</listitem>
       <listitem><emphasis>Support Classes</emphasis> - that offer reusable components (built on the aforementioned abstractions) such as 
-      <interfacename>java.util.Collection</interfacename> or Spring 3.1 <ulink url="http://blog.springsource.com/2011/02/23/spring-3-1-m1-caching/">cache</ulink> implementation backed by 
+      <interfacename>java.util.Collection</interfacename> or Spring 3.1 <ulink url="https://spring.io/blog/2011/02/23/spring-3-1-m1-caching/">cache</ulink> implementation backed by 
       Redis as documented in <xref linkend="redis:support"/></listitem>
     </itemizedlist>
     
@@ -56,7 +56,7 @@
         
         <para><interfacename>RedisConnection</interfacename> provides the building block for Redis communication as it handles the communication with the Redis back-end. 
         It also automatically translates the underlying connecting library exceptions to Spring's consistent DAO exception 
-        <ulink url="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/dao.html#dao-exceptions">hierarchy</ulink> so one can switch the connectors
+        <ulink url="https://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/dao.html#dao-exceptions">hierarchy</ulink> so one can switch the connectors
         without any code changes as the operation semantics remain the same.</para>
         
         <note>For the corner cases where the native library API is required, <interfacename>RedisConnection</interfacename> provides a dedicated method 
@@ -65,7 +65,7 @@
         <para>Active <interfacename>RedisConnection</interfacename> are created through <interfacename>RedisConnectionFactory</interfacename>. In addition, the factories act as
         <interfacename>PersistenceExceptionTranslator</interfacename> meaning once declared, allow one to do transparent exception translation for example through the use of the
         <literal>@Repository</literal> annotation and AOP. For more information see the dedicated 
-        <ulink url="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/orm.html#orm-exception-translation">section</ulink> in Spring Framework documentation.</para>
+        <ulink url="https://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/orm.html#orm-exception-translation">section</ulink> in Spring Framework documentation.</para>
         
         <note>Depending on the underlying configuration, the factory can return a new connection or an existing connection (in case a pool is used).</note>
       </section>
@@ -86,14 +86,14 @@
       <section id="redis:connectors:jedis">
         <title>Configuring Jedis connector</title>
         
-        <para><ulink url="http://github.com/xetorthio/jedis">Jedis</ulink> is one of the connectors supported by the Key Value module through the 
+        <para><ulink url="https://github.com/xetorthio/jedis">Jedis</ulink> is one of the connectors supported by the Key Value module through the 
         <literal>org.springframework.data.redis.connection.jedis</literal> package. In its simples form, the Jedis configuration looks as follow:</para>
         
         <programlisting language="xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
     
     <!-- Jedis ConnectionFactory -->
   <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"/>
@@ -106,7 +106,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:p="http://www.springframework.org/schema/p"
   xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
     
   <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
         p:host-name="server" p:port="6379"/>
@@ -117,10 +117,10 @@
       <section id="redis:connectors:jredis">
         <title>Configuring JRedis connector</title>
         
-        <para><ulink url="http://github.com/alphazero/jredis">JRedis</ulink> is another popular, open-source connector supported by Spring Redis through the
+        <para><ulink url="https://github.com/alphazero/jredis">JRedis</ulink> is another popular, open-source connector supported by Spring Redis through the
         <literal>org.springframework.data.redis.connection.jredis</literal> package.</para> 
         <note>Since JRedis itself does not support (yet) Redis 2.x commands, Spring Redis uses an updated fork available 
-        <ulink url="http://github.com/anthonylauzon/jredis">here</ulink>.</note>
+        <ulink url="https://github.com/anthonylauzon/jredis">here</ulink>.</note>
         
         <para>A typical JRedis configuration can looks like this:</para>
 
@@ -129,7 +129,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:p="http://www.springframework.org/schema/p"
   xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
     
   <bean id="jredisConnectionFactory" class="org.springframework.data.redis.connection.jredis.JredisConnectionFactory"
         p:host-name="server" p:port="6379"/>
@@ -138,7 +138,7 @@
       <para>As one can note, the configuration is quite similar to the Jedis one.</para>
       
       <important><para>Currently, JRedis does not have support for binary keys. This forces the <classname>JredisConnection</classname> to perform encoding internally
-      (through <ulink url="http://en.wikipedia.org/wiki/Base64">base64</ulink> schema). In practice, this means it's safe to read/write arbitrary data however 
+      (through <ulink url="https://en.wikipedia.org/wiki/Base64">base64</ulink> schema). In practice, this means it's safe to read/write arbitrary data however 
       the Redis key stored values will differ from the decoded ones, even in the simplest cases, since everything (no matter the format) is encoded. This will not be
       the case for Redis values.</para>
       <para>This issue is currently being addressed in the JRedis project and once fixed, will be incorporated by Spring Data Redis.</para>  
@@ -149,7 +149,7 @@
       <section id="redis:connectors:rjc">
         <title>Configuring RJC connector</title>
         
-        <para><ulink url="http://github.com/e-mzungu/rjc">RJC</ulink> is the third, open-source connector supported by Spring Redis through the
+        <para><ulink url="https://github.com/e-mzungu/rjc">RJC</ulink> is the third, open-source connector supported by Spring Redis through the
         <literal>org.springframework.data.redis.connection.rjc</literal> package.</para> 
         
         <para>Similar to the other connectors, a typical RJC configuration can looks like this:</para>
@@ -159,7 +159,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:p="http://www.springframework.org/schema/p"
   xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
     
   <bean id="jredisConnectionFactory" class="org.springframework.data.redis.connection.rjc.RjcConnectionFactory"
         p:host-name="server" p:port="6379"/>
@@ -168,7 +168,7 @@
       <para>As one can note, the configuration is quite similar to the Jredis or Jedis one.</para>
       
       <important><para>Currently, RJC does not have support for binary keys. This forces the <classname>RjcConnection</classname> to perform encoding internally
-      (through <ulink url="http://en.wikipedia.org/wiki/Base64">base64</ulink> schema). In practice, this means it's safe to read/write arbitrary data however 
+      (through <ulink url="https://en.wikipedia.org/wiki/Base64">base64</ulink> schema). In practice, this means it's safe to read/write arbitrary data however 
       the Redis key stored values will differ from the decoded ones, even in the simplest cases, since everything (no matter the format) is encoded. This will not be
       the case for Redis values.</para>
       <para>This issue is currently being addressed in the RJC project and once fixed, will be incorporated by Spring Data Redis.</para>  
@@ -186,7 +186,7 @@
       The template offers a high-level abstraction for Redis interaction - while <interfacename>RedisConnection</interfacename> offer low level methods that accept and return
       binary values (<literal>byte</literal> arrays), the template takes care of serialization and connection management, freeing the user from dealing with such details.</para>
       
-      <para>Moreover, the template provides operations views (following the grouping from Redis command <ulink url="http://redis.io/commands">reference</ulink>)
+      <para>Moreover, the template provides operations views (following the grouping from Redis command <ulink url="https://redis.io/commands">reference</ulink>)
       that offer rich, generified interfaces for working against a certain type or certain key (through the <interfacename>KeyBound</interfacename> interfaces) as described below:</para>
       
       <table  id="redis-template-operations-view" pgwide="1">
@@ -269,7 +269,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:p="http://www.springframework.org/schema/p"
   xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
     
   <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
         p:use-pool="true"/>
@@ -313,7 +313,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:p="http://www.springframework.org/schema/p"
   xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
     
   <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
         p:use-pool="true"/>
@@ -359,8 +359,8 @@
 	  (package <literal>org.springframework.data.redis.serializer</literal>) which as the name implies, takes care of the serialization process. Multiple implementations are
 	  available out of the box, two of which have been already mentioned before in this documentation: the <literal>StringRedisSerializer</literal> and 
 	  the <literal>JdkSerializationRedisSerializer</literal>. However one can use <classname>OxmSerializer</classname> for Object/XML mapping through Spring 3 
-	  <ulink url="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/oxm.html">OXM</ulink> support or <classname>JacksonJsonRedisSerializer</classname> for storing
-	  data in <ulink url="http://en.wikipedia.org/wiki/JSON">JSON</ulink> format. Do note that the storage format is not limited only to values - it can be used for keys, values or hashes
+	  <ulink url="https://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/oxm.html">OXM</ulink> support or <classname>JacksonJsonRedisSerializer</classname> for storing
+	  data in <ulink url="https://en.wikipedia.org/wiki/JSON">JSON</ulink> format. Do note that the storage format is not limited only to values - it can be used for keys, values or hashes
 	  without any restrictions.</para>
 	</section>
 	
@@ -370,8 +370,8 @@
       <title>Support Classes</title>
       
       <para>Package <literal>org.springframework.data.redis.support</literal> offers various reusable components that rely on Redis as a backing store. Curently the package contains
-      various JDK-based interface implementations on top of Redis such as <ulink url="http://download.oracle.com/javase/6/docs/api/java/util/concurrent/atomic/package-summary.html">atomic</ulink> 
-      counters and JDK <interfacename><ulink url="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html">Collections</ulink></interfacename>.</para>
+      various JDK-based interface implementations on top of Redis such as <ulink url="https://download.oracle.com/javase/6/docs/api/java/util/concurrent/atomic/package-summary.html">atomic</ulink> 
+      counters and JDK <interfacename><ulink url="https://download.oracle.com/javase/6/docs/api/java/util/Collection.html">Collections</ulink></interfacename>.</para>
       
       <para>The atomic counters make it easy to wrap Redis key incrementation while the collections allow easy management of Redis keys with minimal storage exposure or API leakage: in particular
       the <interfacename>RedisSet</interfacename> and <interfacename>RedisZSet</interfacename> interfaces offer easy access to the <emphasis>set</emphasis> operations supported by Redis such as
@@ -384,7 +384,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:p="http://www.springframework.org/schema/p"
   xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
     
   <bean id="queue" class="org.springframework.data.redis.support.collections.DefaultRedisList">
     <constructor-arg ref="redisTemplat"/>
@@ -409,14 +409,14 @@
 	 <section id="redis:support:cache-abstraction">
         <title>Support for Spring Cache Abstraction</title>
   	
-  	<para>Spring Redis provides an implementation for Spring 3.1 <ulink url="http://static.springsource.org/spring/docs/3.1.0.M2/spring-framework-reference/html/cache.html">cache abstraction</ulink>
+  	<para>Spring Redis provides an implementation for Spring 3.1 <ulink url="https://docs.spring.io/spring/docs/3.1.0.M2/spring-framework-reference/html/cache.html">cache abstraction</ulink>
   	through the <literal>org.springframework.data.redis.cache</literal> package. To use Redis as a backing implementation, simply add <literal>RedisCacheManager</literal> to your configuration:</para>
   	
   	<programlisting language="xml"><![CDATA[<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:cache="http://www.springframework.org/schema/cache"
   xmlns:c="http://www.springframework.org/schema/c"
-  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-      http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+  xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/cache https://www.springframework.org/schema/cache/spring-cache.xsd">
   <!-- turn on declarative caching -->
   <cache:annotation-driven />
   

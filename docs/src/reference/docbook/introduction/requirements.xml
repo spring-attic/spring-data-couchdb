@@ -2,10 +2,10 @@
       <title>Requirements</title>
 
       <para>Spring Data Redis 1.x binaries requires JDK level 6.0 and above, 
-      and <ulink url="http://www.springsource.org/documentation">Spring Framework</ulink>
+      and <ulink url="https://www.springsource.org/documentation">Spring Framework</ulink>
       3.0.x and above.</para>
       <para>
-      In terms of key value stores, <ulink url="http://code.google.com/p/redis/">Redis</ulink> 2.2.x 
+      In terms of key value stores, <ulink url="https://code.google.com/p/redis/">Redis</ulink> 2.2.x 
       is required.
       </para>
   </chapter>
