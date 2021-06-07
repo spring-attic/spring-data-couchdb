@@ -1,3 +1,6 @@
+This project is archived and no longer maintained.
+--------------------------------------------------
+
 Spring Data CouchDB
 =======================
 
